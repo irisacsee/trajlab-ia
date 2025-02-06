@@ -34,18 +34,26 @@ public class KNNQueryProcess {
     private static final BasePoint CEN_POINT = new BasePoint(116.492, 39.914);
     private static final Trajectory CEN_TRAJECTORY = getCenTrajectory(ROW_KEY);
 
-//    private static final String[] DATA_SET_NAMES = new String[]{"T100ST", "T100TS"};
-    private static final String[] DATA_SET_NAMES = new String[]{"T100ST"};
-//    private static final String[] MODES = new String[]{"point", "trajectory"};
-    private static final String[] MODES = new String[]{"point"};
+    private static final String[] DATA_SET_NAMES = new String[]{"T100ST", "T100TS", "T100JST"};  // XZ2T, TXZ2
+    //    private static final String[] DATA_SET_NAMES = new String[]{"T100ST"};  // XZ2T
+    private static final String[] MODES = new String[]{"point", "trajectory"};  // 点模式，轨迹模式
+    //    private static final String[] MODES = new String[]{"point"};  // 点模式
     private static final String[] RUNS = new String[]{"run", "runPartitioned"};
     private static final int[] KS = new int[]{10, 50, 100, 500, 1000};
-    private static final int[] RUNS_INDEX = new int[]{0, 0};
-    private static final int[] KS_INDEX = new int[]{0};
-    private static final int[] TIME_LINES_INDEX = new int[]{0};
+    //    private static final int[] RUNS_INDEX = new int[]{0, 0};
+//    private static final int[] KS_INDEX = new int[]{0};
+//    private static final int[] TIME_LINES_INDEX = new int[]{0};
 //    private static final int[] RUNS_INDEX = new int[]{1};
 //    private static final int[] KS_INDEX = new int[]{0, 1, 2, 3, 4};
 //    private static final int[] TIME_LINES_INDEX = new int[]{0, 1, 2, 3, 4};
+    // 剪枝测试
+//    private static final int[] RUNS_INDEX = new int[]{1, 1}; // 测两次
+//    private static final int[] KS_INDEX = new int[]{0};
+//    private static final int[] TIME_LINES_INDEX = new int[]{0};
+    // JST测试
+    private static final int[] RUNS_INDEX = new int[]{0, 0}; // 测两次
+    private static final int[] KS_INDEX = new int[]{0};
+    private static final int[] TIME_LINES_INDEX = new int[]{0};
     private static final TimeLine[] TIME_LINES = new TimeLine[5];
 
 //    private static final String[] DATA_SET_NAMES = new String[]{"T100ST"};
@@ -53,7 +61,7 @@ public class KNNQueryProcess {
 //    private static final String[] RUNS = new String[]{"runPartitioned"};
 //    private static final int[] KS = new int[]{10, 50, 100};
 
-//    private static final List<TimeLine> TIME_LINES = new ArrayList<>();
+    //    private static final List<TimeLine> TIME_LINES = new ArrayList<>();
     private static final SparkSession SS = SparkUtil.createSession(KNNQueryProcess.class.getName());
 
     static {

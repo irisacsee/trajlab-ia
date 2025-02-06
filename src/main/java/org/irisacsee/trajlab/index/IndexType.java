@@ -24,12 +24,13 @@ public enum IndexType implements Serializable {
     KNN(6),
     BUFFER(7),
     SIMILAR(8),
-    ACCOMPANY(9);
+    ACCOMPANY(9),
+    JST(10);
 
     final int id;
 
     public static List<IndexType> spatialIndexTypes() {
-        return Arrays.asList(XZ2, XZ2T, TXZ2);
+        return Arrays.asList(XZ2, XZ2T, TXZ2, JST);
     }
 
     IndexType(int id) {

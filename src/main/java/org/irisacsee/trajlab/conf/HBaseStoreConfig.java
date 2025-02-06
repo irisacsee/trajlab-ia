@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.irisacsee.trajlab.conf.enums.StoreSchema;
 import org.irisacsee.trajlab.index.IndexType;
+import org.irisacsee.trajlab.index.impl.JSTIndexStrategy;
 import org.irisacsee.trajlab.index.impl.TXZ2IndexStrategy;
 import org.irisacsee.trajlab.index.impl.XZ2IndexStrategy;
 import org.irisacsee.trajlab.index.impl.XZ2TIndexStrategy;
@@ -83,6 +84,8 @@ public class HBaseStoreConfig implements IStoreConfig {
                 return new IndexMeta(isMainIndex, new XZ2TIndexStrategy(), dataSetName, "default");
             case TXZ2:
                 return new IndexMeta(isMainIndex, new TXZ2IndexStrategy(), dataSetName, "default");
+            case JST:
+                return new IndexMeta(isMainIndex, new JSTIndexStrategy(), dataSetName, "default");
             default:
                 throw new NotImplementedError();
         }

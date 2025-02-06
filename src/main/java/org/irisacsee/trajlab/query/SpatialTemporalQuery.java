@@ -36,6 +36,8 @@ public class SpatialTemporalQuery extends AbstractQuery<SpatialTemporalQueryCond
             indexList = map.get(IndexType.TXZ2);
         } else if (map.containsKey(IndexType.XZ2T)) {
             indexList = map.get(IndexType.XZ2T);
+        } else if (map.containsKey(IndexType.JST)) {
+            indexList = map.get(IndexType.JST);
         }
         if (indexList != null) {
             return IndexMeta.getBestIndexMeta(indexList);

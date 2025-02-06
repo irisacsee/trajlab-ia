@@ -649,6 +649,9 @@ public class KNNQuery extends AbstractQuery<SpatialTemporalQueryCondition> {
             if (map.containsKey(IndexType.TXZ2)) {
                 return IndexMeta.getBestIndexMeta(map.get(IndexType.TXZ2));
             }
+            if (map.containsKey(IndexType.JST)) {
+                return IndexMeta.getBestIndexMeta(map.get(IndexType.JST));
+            }
         }
         return null;
     }
